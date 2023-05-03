@@ -1,0 +1,553 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('HelveticaNeueBoldCondensed.eot');
+    src: local('Helvetica Neue Condensed Bold'), local('HelveticaNeueBoldCondensed'),
+        url('HelveticaNeueBoldCondensed.eot?#iefix') format('embedded-opentype'),
+        url('HelveticaNeueBoldCondensed.woff2') format('woff2'),
+        url('HelveticaNeueBoldCondensed.woff') format('woff'),
+        url('HelveticaNeueBoldCondensed.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('HelveticaNeueBlackCondensed.eot');
+    src: local('Helvetica Neue Condensed Black'), local('HelveticaNeueBlackCondensed'),
+        url('HelveticaNeueBlackCondensed.eot?#iefix') format('embedded-opentype'),
+        url('HelveticaNeueBlackCondensed.woff2') format('woff2'),
+        url('HelveticaNeueBlackCondensed.woff') format('woff'),
+        url('HelveticaNeueBlackCondensed.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HelveticaNeueCyr';
+    src: url('HelveticaNeueCyr-Bold.eot');
+    src: local('HelveticaNeueCyr-Bold'),
+        url('HelveticaNeueCyr-Bold.eot?#iefix') format('embedded-opentype'),
+        url('HelveticaNeueCyr-Bold.woff2') format('woff2'),
+        url('HelveticaNeueCyr-Bold.woff') format('woff'),
+        url('HelveticaNeueCyr-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HelveticaNeueCyr';
+    src: url('HelveticaNeueCyr-Light.eot');
+    src: local('HelveticaNeueCyr-Light'),
+        url('HelveticaNeueCyr-Light.eot?#iefix') format('embedded-opentype'),
+        url('HelveticaNeueCyr-Light.woff2') format('woff2'),
+        url('HelveticaNeueCyr-Light.woff') format('woff'),
+        url('HelveticaNeueCyr-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HelveticaNeueCyr';
+    src: url('HelveticaNeueCyr-Medium.eot');
+    src: local('HelveticaNeueCyr-Medium'),
+        url('HelveticaNeueCyr-Medium.eot?#iefix') format('embedded-opentype'),
+        url('HelveticaNeueCyr-Medium.woff2') format('woff2'),
+        url('HelveticaNeueCyr-Medium.woff') format('woff'),
+        url('HelveticaNeueCyr-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HelveticaNeueCyr';
+    src: url('HelveticaNeueCyr-MediumItalic.eot');
+    src: local('HelveticaNeueCyr-MediumItalic'),
+        url('HelveticaNeueCyr-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('HelveticaNeueCyr-MediumItalic.woff2') format('woff2'),
+        url('HelveticaNeueCyr-MediumItalic.woff') format('woff'),
+        url('HelveticaNeueCyr-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'HelveticaNeueCyr';
+    src: url('HelveticaNeueCyr-LightItalic.eot');
+    src: local('HelveticaNeueCyr-LightItalic'),
+        url('HelveticaNeueCyr-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('HelveticaNeueCyr-LightItalic.woff2') format('woff2'),
+        url('HelveticaNeueCyr-LightItalic.woff') format('woff'),
+        url('HelveticaNeueCyr-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'HelveticaNeueCyr';
+    src: url('HelveticaNeueCyr-HeavyItalic.eot');
+    src: local('HelveticaNeueCyr-HeavyItalic'),
+        url('HelveticaNeueCyr-HeavyItalic.eot?#iefix') format('embedded-opentype'),
+        url('HelveticaNeueCyr-HeavyItalic.woff2') format('woff2'),
+        url('HelveticaNeueCyr-HeavyItalic.woff') format('woff'),
+        url('HelveticaNeueCyr-HeavyItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'HelveticaNeueCyr';
+    src: url('HelveticaNeueCyr-Black.eot');
+    src: local('HelveticaNeueCyr-Black'),
+        url('HelveticaNeueCyr-Black.eot?#iefix') format('embedded-opentype'),
+        url('HelveticaNeueCyr-Black.woff2') format('woff2'),
+        url('HelveticaNeueCyr-Black.woff') format('woff'),
+        url('HelveticaNeueCyr-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HelveticaNeueCyr';
+    src: url('HelveticaNeueCyr-Heavy.eot');
+    src: local('HelveticaNeueCyr-Heavy'),
+        url('HelveticaNeueCyr-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('HelveticaNeueCyr-Heavy.woff2') format('woff2'),
+        url('HelveticaNeueCyr-Heavy.woff') format('woff'),
+        url('HelveticaNeueCyr-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HelveticaNeueCyr';
+    src: url('HelveticaNeueCyr-Italic.eot');
+    src: local('HelveticaNeueCyr-Italic'),
+        url('HelveticaNeueCyr-Italic.eot?#iefix') format('embedded-opentype'),
+        url('HelveticaNeueCyr-Italic.woff2') format('woff2'),
+        url('HelveticaNeueCyr-Italic.woff') format('woff'),
+        url('HelveticaNeueCyr-Italic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'HelveticaNeueCyr';
+    src: url('HelveticaNeueCyr-Roman.eot');
+    src: local('HelveticaNeueCyr-Roman'),
+        url('HelveticaNeueCyr-Roman.eot?#iefix') format('embedded-opentype'),
+        url('HelveticaNeueCyr-Roman.woff2') format('woff2'),
+        url('HelveticaNeueCyr-Roman.woff') format('woff'),
+        url('HelveticaNeueCyr-Roman.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HelveticaNeueCyr';
+    src: url('HelveticaNeueCyr-BlackItalic.eot');
+    src: local('HelveticaNeueCyr-BlackItalic'),
+        url('HelveticaNeueCyr-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('HelveticaNeueCyr-BlackItalic.woff2') format('woff2'),
+        url('HelveticaNeueCyr-BlackItalic.woff') format('woff'),
+        url('HelveticaNeueCyr-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'HelveticaNeueCyr';
+    src: url('HelveticaNeueCyr-UltraLightItalic.eot');
+    src: local('HelveticaNeueCyr-UltraLightItalic'),
+        url('HelveticaNeueCyr-UltraLightItalic.eot?#iefix') format('embedded-opentype'),
+        url('HelveticaNeueCyr-UltraLightItalic.woff2') format('woff2'),
+        url('HelveticaNeueCyr-UltraLightItalic.woff') format('woff'),
+        url('HelveticaNeueCyr-UltraLightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'HelveticaNeueCyr';
+    src: url('HelveticaNeueCyr-BoldItalic.eot');
+    src: local('HelveticaNeueCyr-BoldItalic'),
+        url('HelveticaNeueCyr-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('HelveticaNeueCyr-BoldItalic.woff2') format('woff2'),
+        url('HelveticaNeueCyr-BoldItalic.woff') format('woff'),
+        url('HelveticaNeueCyr-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'HelveticaNeueCyr';
+    src: url('HelveticaNeueCyr-ThinItalic.eot');
+    src: local('HelveticaNeueCyr-ThinItalic'),
+        url('HelveticaNeueCyr-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('HelveticaNeueCyr-ThinItalic.woff2') format('woff2'),
+        url('HelveticaNeueCyr-ThinItalic.woff') format('woff'),
+        url('HelveticaNeueCyr-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'HelveticaNeueCyr';
+    src: url('HelveticaNeueCyr-UltraLight.eot');
+    src: local('HelveticaNeueCyr-UltraLight'),
+        url('HelveticaNeueCyr-UltraLight.eot?#iefix') format('embedded-opentype'),
+        url('HelveticaNeueCyr-UltraLight.woff2') format('woff2'),
+        url('HelveticaNeueCyr-UltraLight.woff') format('woff'),
+        url('HelveticaNeueCyr-UltraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HelveticaNeueCyr';
+    src: url('HelveticaNeueCyr-Thin.eot');
+    src: local('HelveticaNeueCyr-Thin'),
+        url('HelveticaNeueCyr-Thin.eot?#iefix') format('embedded-opentype'),
+        url('HelveticaNeueCyr-Thin.woff2') format('woff2'),
+        url('HelveticaNeueCyr-Thin.woff') format('woff'),
+        url('HelveticaNeueCyr-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+.container {
+    display: flex;
+    flex: column;
+    align-items: center;
+    padding: 0 15px;
+}
+
+/* вернись сюда ещё раз */
+
+.footer__container {
+    background-color: #373A3C;
+    justify-content: space-evenly;
+}
+
+/* вернись сюда ещё раз */
+
+body {
+    font-family: 'HelveticaNeueCyr';
+}
+
+:root {
+    --color-grey: #373A3C;
+    --color-white: #fff;
+    --color-green: #8DD83D;
+    --color-black: linear-gradient(180deg, #686C6F 0%, #373A3C 100%);
+}
+
+.btn__black {
+    width: 148px;
+    height: 38px;
+    background-image: linear-gradient(180deg, #686C6F 0%, #373A3C 100%);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-family: 'HelveticaNeue';
+}
+
+.btn__green {
+    width: 148px;
+    height: 38px;
+    background-color: var(--color-green);
+    border: none;
+    border-radius: 4px;
+    font-family: 'HelveticaNeue';
+}
+
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    left: 0px;
+    top: 0px;
+    background: #373A3C;
+    border-radius: 0 0 4px 4px;
+
+}
+ .nav__logo {
+    width: 80px;
+    height: 25px;
+ }
+
+.nav__link {
+    color: #b1b1b1;
+    cursor: pointer;
+}
+
+.nav__link:hover {
+    color: #fff;
+}
+
+.header__container {
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav__list {
+    display: flex;
+    align-items: center;
+    font-style: bold;
+}
+
+.Search {
+    min-width: max-content;
+    height: 32px;
+    border-radius: 6px;
+}
+
+.nav__link:not(last-child) {
+    display: flex;
+    margin-right: 35px;
+}
+
+.hero {
+    background-image: url(../img/hero-post.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 788px;
+}
+
+.hero__container {
+    display: flex;
+    margin-left: 58%;
+    flex-direction: column;
+    align-items: first baseline;
+    justify-content: space-around;
+    color:#fff;
+}
+
+.hero__title {
+    margin-top: 60%;
+    font-family: 'HelveticaNeueCyr';
+    font-size: 36px;
+    line-height: 42px;
+    max-width: 412px;
+    width: 140px;
+    text-shadow: 4px 4px 4px 3px;
+}
+
+.hero__descr {
+    margin-top: 1%;
+    font-size: 24px;
+}
+
+.hero__text {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    font-size: 18px;
+    max-width: 412px;
+}
+
+.hero__btn {
+    margin-top: 1%;
+}
+
+.value__container {
+    display: flex;
+    flex-direction: column;
+    background-image: url(../img/Rectangle.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 868px;
+}
+
+.value__img {
+    margin-top: 2%;
+    width: 64px;
+    height: 64px;
+}
+
+.value__title {
+    font-size: 48px;
+    line-height: 56px;
+    color: #FFFFFF;
+}
+
+.value__card {
+    display: flex;
+    align-items: center;
+    top: 5%;
+}
+
+.value__item {
+    width: 320px;
+    height: 420px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex: 358px;
+    background: #FFFFFF;
+    border: 1px solid #8DD83D;
+    border-radius: 4px;
+    justify-content: space-between;
+}
+
+.exclusive__item {
+    width: 320px;
+    height: 420px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex: 358px;
+    background: #FFFFFF;
+    border: 1px solid #8DD83D;
+    border-radius: 4px;
+    justify-content: space-between;
+}
+
+.card__pic {
+    width: 318px;
+    height: 180px;
+}
+
+.value__descr {
+    font-family: 'HelveticaNeue';
+    font-size: 28px;
+    line-height: 21px;
+}
+
+.value__text {
+    font-family: 'HelveticaNeue';
+    text-align: center;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.exclusive__container {
+    display: flex;
+    flex-direction: column;
+    background-image: url(../img/exclusive-post.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 880px;
+}
+
+.exclusive__screenshot {
+    width: 318px;
+    height: 180px;
+}
+
+.exclusive__card {
+    display: flex;
+    margin-top: 2%;
+    align-items: center;
+    top: 5%;
+}
+
+.exclusive__descr {
+    font-family: 'HelveticaNeue';
+    font-size: 36px;
+}
+
+.value__text {
+    font-family: 'HelveticaNeue';
+    font-size: 21px;
+    line-height: 25px;
+}
+
+.exclusive__title {
+    margin-top: 2%;
+    font-family: 'HelveticaNeue';
+    font-size: 36px;
+    line-height: 42px;   
+    color: #FFFFFF;
+}
+
+.exclusive__btn {
+    margin-top: 3%;
+}
+
+.design__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-image: url(../img/lab-post.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 480px;
+}
+
+.design__title {
+    margin-top: 2%;
+    margin-left: 25px;
+    font-family: 'HelveticaNeue';
+    font-size: 36px;
+    line-height: 42px;   
+    color: #FFFFFF;
+}
+
+.design__descr {
+    font-family: 'HelveticaNeue';
+    max-width: 533px;
+    margin-left: 25px;
+    font-size: 32px;
+    color: #FFFFFF;
+}
+
+.des__btn {
+    margin-left: 25px;
+    margin-top: 1%;
+    display: block;
+}
+
+.footer__container {
+    width: 100%;
+    height: 380px;
+}
+
+.footer__soc {
+    width: 19px;
+    height: 19px;
+}
+
+.footer__social {
+    flex-direction: row;
+}
+
+.footer__tex {
+    font-family: 'HelveticaNeue';
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+
+    color: #7DD42F;
+}
